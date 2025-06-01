@@ -59,7 +59,7 @@ body {
 .nav-menu a:hover { color: var(--amarelo); }
 .whatsapp-header {
   background: #25D366 !important;
-  color: #fff !important;
+  color: #222 !important;
   font-weight: 700;
   border-radius: 999px;
   padding: 0.6rem 1.3rem;
@@ -661,6 +661,7 @@ body {
 .nav-menu-mobile ul {
   list-style: none;
   padding: 0;
+  padding-left: 0;
   margin: 0;
   height: 100%;
   display: flex;
