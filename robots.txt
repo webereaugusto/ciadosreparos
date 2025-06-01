@@ -1,0 +1,51 @@
+User-agent: *
+Allow: /
+
+# Principais páginas
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+
+# Imagens e recursos
+Allow: /images/
+Allow: /assets/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.css
+Allow: /*.js
+
+# Bloquear arquivos desnecessários
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.log
+Disallow: /*.tmp
+Disallow: /backup/
+
+# Sitemap
+Sitemap: https://ciadosreparos.com.br/sitemap.xml
+
+# Crawl-delay para bots mais educados
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Social media bots
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: / 

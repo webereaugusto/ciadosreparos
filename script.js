@@ -191,4 +191,44 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
+});
+
+// SLIDESHOW AUTOMÁTICO DO HERO
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    
+    if (slides.length > 0) {
+        // Preload das imagens para transições mais suaves
+        slides.forEach(slide => {
+            const img = new Image();
+            const bgImage = slide.style.backgroundImage;
+            if (bgImage) {
+                img.src = bgImage.slice(5, -2); // Remove url(" e ")
+            }
+        });
+        
+        function nextSlide() {
+            // Remove active da slide atual
+            slides[currentSlide].classList.remove('active');
+            
+            // Avança para próxima slide
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            // Adiciona active na nova slide com pequeno delay para transição suave
+            setTimeout(() => {
+                slides[currentSlide].classList.add('active');
+            }, 50);
+        }
+        
+        // Inicia o slideshow automático - 6 segundos para dar tempo das transições
+        setInterval(nextSlide, 6000);
+        
+        // Pausa o slideshow quando a aba não está ativa (performance)
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // Pausar animações seria aqui se necessário
+            }
+        });
+    }
 }); 
